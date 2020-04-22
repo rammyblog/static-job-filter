@@ -15,7 +15,7 @@ export default function Footer() {
       &
       <span className="text-cyan-darker m-1">
         Coded with{" "}
-        <span className="text-red-700" ="love" role="img">
+        <span className="text-red-700" aria-label="love" role="img">
           ❤️
         </span>{" "}
         by{" "}
