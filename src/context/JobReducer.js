@@ -19,9 +19,10 @@ export default (state, action) => {
     case "FILTER_BY_TAGS":
       return {
         ...state,
-        jobs: action.tags.length
-          ? state.tempJobs.filter((job) => jobFiltering(action.tags, job))
-          : state.jobs,
+        jobs:
+          action.tags.length > 0
+            ? state.tempJobs.filter((job) => jobFiltering(action.tags, job))
+            : state.tempJobs,
       }
     case "ADD_TAG":
       return {
@@ -32,6 +33,12 @@ export default (state, action) => {
       return {
         ...state,
         tags: state.tags.filter((tag) => tag !== action.tag),
+      }
+
+    case "CLEAR_TAGS":
+      return {
+        ...state,
+        tags: [],
       }
     default:
       return state

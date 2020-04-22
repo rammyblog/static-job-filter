@@ -15,3 +15,7 @@ export const addTagsTOArray = (tag) => {
 export const removeTagsFromArray = (tag) => {
   return { type: types.REMOVE_TAG, tag }
 }
+
+export const clearTagsFromArray = () => {
+  return { type: types.CLEAR_TAGS }
+}

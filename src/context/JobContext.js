@@ -6,6 +6,7 @@ import {
   filterJobsByTags,
   addTagsTOArray,
   removeTagsFromArray,
+  clearTagsFromArray,
 } from "./JobActions"
 
 const initialState = {
@@ -28,7 +29,6 @@ export const JobProvider = ({ children }) => {
   }
 
   const removeTags = (tagText) => {
-    console.log("contect")
     dispatch(removeTagsFromArray(tagText))
   }
 
@@ -36,19 +36,29 @@ export const JobProvider = ({ children }) => {
     dispatch(filterJobsByTags(tags))
   }
 
+  const clearTags = () => {
+    dispatch(clearTagsFromArray())
+  }
+
   useEffect(() => {
     loadJobs()
   }, [])
 
   useEffect(() => {
-    if (state.tags.length > 0) {
+    if (state.tags.length >= 0) {
       filterJobsFunction(state.tags)
     }
   }, [state.tags])
 
   return (
     <jobContext.Provider
-      value={{ jobsListing: state.jobs, tags: state.tags, addTags, removeTags }}
+      value={{
+        jobsListing: state.jobs,
+        tags: state.tags,
+        addTags,
+        removeTags,
+        clearTags,
+      }}
     >
       {children}
     </jobContext.Provider>
