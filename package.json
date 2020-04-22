@@ -15,7 +15,6 @@
   "scripts": {
     "build:css": "postcss src/assets/css/tailwind.css -o src/assets/css/styles.css",
     "watch:css": "postcss src/assets/css/tailwind.css -o src/assets/css/styles.css",
-    "prebuild": "NODE_ENV=production npm build:css",
     "start": "npm run watch:css & react-scripts start",
     "build": "npm run build:css & react-scripts build",
     "test": "react-scripts test",
