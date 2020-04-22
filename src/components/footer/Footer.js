@@ -2,7 +2,7 @@ import React from "react"
 
 export default function Footer() {
   return (
-    <div className=" text-cyan-darker text-center mx-auto items-center">
+    <div className=" text-cyan-darker static bottom-0 left-0 text-center mx-auto ">
       Challenge by{" "}
       <a
         href="https://www.frontendmentor.io/challenges/job-listings-with-filtering-ivstIPCt"
