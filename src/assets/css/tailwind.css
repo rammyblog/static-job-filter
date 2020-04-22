@@ -1,9 +1,9 @@
-@import "tailwindcss/base";
-
+/* purgecss start ignore */
+@tailwind base;
 body {
   @apply bg-cyan-grayBg;
 }
-
-@import "tailwindcss/components";
+@tailwind components;
+/* purgecss end ignore */
 
 @import "tailwindcss/utilities";

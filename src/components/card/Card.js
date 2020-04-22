@@ -23,13 +23,11 @@ export default function Card(props) {
               flex-col bg-white mb-8 py-0 px-4 md:p-4 md:py-4 h-65 md:h-40 sm:h-65 lg:h-full lg:py-16 sm:py-0 sm:px-4 lg:py-4 lg:px-16 
         sm:flex-col sm:relative lg:flex-row shadow-lg`
 
+  const featuredClasses = `border-l-4 border-cyan-dark ${cardClasses}`
+
   return (
     <>
-      <div
-        className={
-          featured ? `border-l-4 border-cyan-dark ${cardClasses}` : cardClasses
-        }
-      >
+      <div className={featured ? featuredClasses : cardClasses}>
         <div className="lg:w-3/4 flex flex-col sm:flex-col md:flex-row  lg:flex-row">
           <div className="mr-2 relative bottom-1-5 md:static lg:static">
             <ImageCircle image={logo} />
